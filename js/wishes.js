@@ -89,6 +89,12 @@ class LanguageResolver {
     );
   }
 
+  fromHash() {
+    const hash = location.hash.slice(1);
+    const params = new URLSearchParams(hash);
+    return this.supported.find((lang) => lang === params.get("lang"));
+  }
+
   fromBrowser() {
     return this.supported.find(
       (lang) => lang === navigator.language.slice(0, 2)
@@ -108,7 +114,7 @@ class LanguageResolver {
   }
 
   async resolve() {
-    const explicitLang = this.fromPath() || this.fromQuery();
+    const explicitLang = this.fromHash() || this.fromPath() || this.fromQuery();
     if (explicitLang) return explicitLang;
     try {
       const ipLang = await this.fromIP();
@@ -127,7 +133,8 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     el.textContent = dict[el.dataset.i18n];
   });
-  history.pushState({}, "", lang === "ru" ? "/" : `/?lang=${lang}`);
+  // history.pushState({}, "", lang === "ru" ? "/" : `/?lang=${lang}`);
+  location.hash = lang === "ru" ? "" : `lang=${lang}`;
 }
 
 document.querySelectorAll(".lang-switch button").forEach((btn) => {
