@@ -115,6 +115,45 @@ p[class] {
   border-radius: 0.5em;
 }
 
+@media (width < 480px) {
+  .lang-switch {
+    top: 0.5rem;
+    right: 0.5rem;
+    gap: 0.25rem;
+    font-size: 0.625rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 70%;
+  }
+
+  .lang-switch button {
+    padding: 0.2em 0.4em;
+    border-radius: 0.4em;
+    min-width: 2em;
+    text-align: center;
+  }
+}
+
+@media (width >= 480px) and (width <= 1200px) {
+  .lang-switch {
+    top: 0.75rem;
+    right: 0.75rem;
+    gap: 0.35rem;
+    font-size: 0.6875rem;
+  }
+
+  .lang-switch button {
+    padding: 0.3em 0.5em;
+    border-radius: 0.5em;
+    transition: all 0.2s ease;
+  }
+
+  .lang-switch button:hover {
+    background-color: rgba(102, 143, 154, 0.1);
+    transform: translateY(-1px);
+  }
+}
+
 .snowbank {
   width: 100%;
   height: 10dvh;
