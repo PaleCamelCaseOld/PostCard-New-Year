@@ -103,12 +103,20 @@ class LanguageResolver {
 
   async fromIP() {
     try {
-      const response = await fetch("https://ipapi.co/json/");
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 3000);
+      const response = await fetch("https://ipapi.co/json/", {
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+      if (!response.ok) return null;
       const data = await response.json();
       const countryCode = data.country_code;
       return this.countryToLang[countryCode];
     } catch (error) {
-      console.error("Ошибка при определении IP:", error);
+      if (error.name !== "AbortError") {
+        console.log("IP определение пропущено");
+      }
       return null;
     }
   }
@@ -133,8 +141,9 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     el.textContent = dict[el.dataset.i18n];
   });
-  // history.pushState({}, "", lang === "ru" ? "/" : `/?lang=${lang}`);
-  location.hash = lang === "ru" ? "" : `lang=${lang}`;
+  window.location.hostname.includes("localhost")
+    ? null
+    : (location.hash = lang === "ru" ? "" : `lang=${lang}`);
 }
 
 document.querySelectorAll(".lang-switch button").forEach((btn) => {
