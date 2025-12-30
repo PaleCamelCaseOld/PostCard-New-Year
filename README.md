@@ -1,10 +1,10 @@
 # 🎅 Multilingual New Year's Postcard
 
-An interactive festive postcard with support for 9 languages and automatic user language detection.
+An interactive festive postcard with support for 10 languages and automatic user language detection.
 
 ## ✨ Features
 
-- 🌐 **9 Languages**: Russian, Belarusian, English, German, Ukrainian, Lithuanian, Latvian, Georgian, Kazakh
+- 🌐 **10 Languages**: Russian, Belarusian, English, German, Ukrainian, Lithuanian, Latvian, Georgian, Kazakh, Spanish
 - 🎯 **Auto-language detection**: By IP address, browser settings, or URL parameters
 - ❄️ **Animated snowfall**: 38 snowflakes with unique trajectories
 - 📱 **Responsive design**: Properly displays on all devices
@@ -45,6 +45,7 @@ new-year-card/
 | Belarusian | `by` | Сябры, Вiншую з Новым годам!    |
 | English    | `en` | Friends, Happy New Year!        |
 | German     | `de` | Freunde, Frohes neues Jahr!     |
+| Spanish    | `es` | Amigos,¡Feliz Año Nuevo!        |
 | Ukrainian  | `ua` | Друзі, з Новим роком!           |
 | Lithuanian | `lt` | Draugai, Su Naujaisiais metais! |
 | Latvian    | `lv` | Draugi, Laimīgu Jauno gadu!     |
