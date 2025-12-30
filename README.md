@@ -1,6 +1,6 @@
 # 🎅 Multilingual New Year's Postcard
 
-An interactive festive postcard with support for 10 languages and automatic user language detection.
+An interactive festive postcard with support for 9 languages and automatic user language detection.
 
 ## ✨ Features
 
@@ -145,7 +145,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 Contact
 
-Alexey - [@alexvit93](https://github.com/AlexVit93)
+Alex - [@alexvit93](https://github.com/AlexVit93)
 
 Project Link: [https://github.com/AlexVit93/new_year_ip_postcard.git](https://github.com/AlexVit93/new_year_ip_postcard.git)
 
