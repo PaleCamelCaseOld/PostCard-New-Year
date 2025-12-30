@@ -60,6 +60,16 @@ class LanguageResolver {
     this.translations = translations;
     this.defaultLang = defaultLang;
     this.supported = Object.keys(translations);
+    this.countryToLang = {
+      RU: "ru",
+      BY: "by",
+      UA: "ua",
+      LT: "lt",
+      LV: "lv",
+      DE: "de",
+      GE: "ka",
+      KZ: "kz",
+    };
   }
 
   fromPath() {
@@ -78,13 +88,30 @@ class LanguageResolver {
     );
   }
 
-  resolve() {
-    return (
-      this.fromPath() ||
-      this.fromQuery() ||
-      this.fromBrowser() ||
-      this.defaultLang
-    );
+  async fromIP() {
+    try {
+      const response = await fetch("https://ipapi.co/json/");
+      const data = await response.json();
+      const countryCode = data.country_code;
+      return this.countryToLang[countryCode];
+    } catch (error) {
+      console.error("Ошибка при определении IP:", error);
+      return null;
+    }
+  }
+
+  async resolve() {
+    const explicitLang = this.fromPath() || this.fromQuery();
+    if (explicitLang) return explicitLang;
+    try {
+      const ipLang = await this.fromIP();
+      if (ipLang && this.supported.includes(ipLang)) {
+        return ipLang;
+      }
+    } catch (error) {
+      console.log("Не удалось определить язык по IP, используем браузерный...");
+    }
+    return this.fromBrowser() || this.defaultLang;
   }
 }
 
@@ -93,10 +120,7 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     el.textContent = dict[el.dataset.i18n];
   });
-  const pathMap = {
-    ru: "/",
-  };
-  history.pushState({}, "", `${location.origin}/?lang=${lang}`);
+  history.pushState({}, "", lang === "ru" ? "/" : `/?lang=${lang}`);
 }
 
 document.querySelectorAll(".lang-switch button").forEach((btn) => {
@@ -105,5 +129,10 @@ document.querySelectorAll(".lang-switch button").forEach((btn) => {
   });
 });
 
-const resolver = new LanguageResolver(translations);
-setLanguage(resolver.resolve());
+async function init() {
+  const resolver = new LanguageResolver(translations);
+  const lang = await resolver.resolve();
+  setLanguage(lang);
+}
+
+init();
