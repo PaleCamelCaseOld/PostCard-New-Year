@@ -1,0 +1,450 @@
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+
+:root {
+  --bg-color-body: #b4dce4;
+  --color-font-body: #668f9a;
+  --bg-snow-color: #fefefe;
+  --bg-snowbank: #fdfdff;
+}
+
+body {
+  background-color: var(--bg-color-body);
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Marck Script", system-ui;
+  font-size: 2rem;
+  color: var(--color-font-body);
+  min-height: max(500px, 100dvh);
+  display: grid;
+  grid-template-rows: 1fr 20dvh;
+  overflow: hidden;
+}
+
+@media (width > 1200px) {
+  body {
+    font-size: 2rem;
+  }
+}
+
+p[class] {
+  margin-block: 0;
+}
+
+.congrats {
+  margin: auto;
+}
+
+@media (width < 480px) {
+  .congrats {
+    text-align: center;
+    padding: 1rem;
+  }
+  .congrats__message {
+    text-wrap: pretty;
+  }
+}
+
+.congrats__wish {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.congrats__attention {
+  display: grid;
+  font-size: 1.75rem;
+}
+
+.congrats__author {
+  display: flex;
+  align-items: center;
+  font-size: 0.75em;
+  justify-self: end;
+}
+
+.congrats__author::before {
+  content: "";
+  width: 25px;
+  height: 2px;
+  margin-right: 0.5em;
+  background-color: currentColor;
+}
+
+@media (width > 480px) {
+  .congrats__attention {
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    line-height: 1;
+    width: fit-content;
+    margin-inline: auto;
+  }
+
+  .congrats__new-year {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .congrats__message {
+    max-width: 75%;
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+@media (width > 1200px) {
+  .congrats__attention {
+    font-size: 4.5rem;
+  }
+}
+
+.lang-switch {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+}
+
+.snowbank {
+  width: 100%;
+  height: 10dvh;
+  background-color: var(--bg-snowbank);
+  position: relative;
+  margin-top: auto;
+  animation: snowbank 30s linear forwards;
+}
+
+@keyframes snowbank {
+  0%,
+  28% {
+    height: 10dvh;
+  }
+
+  30%,
+  63% {
+    height: 13dvh;
+  }
+
+  65%,
+  100% {
+    height: 20dvh;
+  }
+}
+
+.snowbank::before,
+.snowbank::after {
+  content: "";
+  height: 15vh;
+  aspect-ratio: 2;
+  border-radius: 50%;
+  background-color: inherit;
+  position: absolute;
+  top: -6dvh;
+  animation: snowdrifts 30s linear forwards;
+}
+
+.snowbank::before {
+  left: 0;
+}
+
+.snowbank::after {
+  right: 0;
+}
+
+@media (width > 1200px) {
+  .snowbank::before {
+    left: 10%;
+  }
+
+  .snowbank::after {
+    right: 10%;
+  }
+}
+
+@keyframes snowdrifts {
+  0%,
+  28% {
+    height: 15dvh;
+    top: -6dvh;
+  }
+
+  30%,
+  63% {
+    height: 16dvh;
+    top: -7dvh;
+  }
+
+  65%,
+  100% {
+    height: 17dvh;
+    top: -8dvh;
+  }
+}
+
+.snow::before,
+.snow::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--bg-snow-color);
+  opacity: 0;
+  animation-name: snow;
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  position: absolute;
+  top: 0;
+}
+
+.snow_1::before {
+  left: 10%;
+  translate: 0 1dvh;
+}
+
+.snow_1::after {
+  left: 20%;
+  translate: 0 1.5dvh;
+  animation-delay: 200ms;
+}
+
+.snow_2::before {
+  left: 30%;
+  translate: 0 2dvh;
+  animation-delay: 520ms;
+}
+
+.snow_2::after {
+  left: 40%;
+  translate: 0 2.5dvh;
+  animation-delay: 999ms;
+}
+
+.snow_3::before {
+  left: 50%;
+  translate: 0 3dvh;
+  animation-delay: 150ms;
+}
+
+.snow_3::after {
+  left: 60%;
+  translate: 0 3.5dvh;
+  animation-delay: 400ms;
+}
+
+.snow_4::before {
+  left: 70%;
+  translate: 0 4dvh;
+  animation-delay: 1550ms;
+}
+
+.snow_4::after {
+  left: 80%;
+  translate: 0 4.5dvh;
+  animation-delay: 655ms;
+}
+
+.snow_5::before {
+  left: 86%;
+  translate: 0 5dvh;
+  animation-delay: 250ms;
+}
+
+.snow_5::after {
+  left: 55%;
+  translate: 0 5.5dvh;
+  animation-delay: 600ms;
+}
+
+.snow_6::before {
+  left: 15%;
+  translate: 0 6dvh;
+  animation-delay: 2000ms;
+}
+
+.snow_6::after {
+  left: 25%;
+  translate: 0 6.5dvh;
+  animation-delay: 2400ms;
+}
+
+.snow_7::before {
+  left: 35%;
+  translate: 0 7dvh;
+  animation-delay: 2999ms;
+}
+
+.snow_7::after {
+  left: 45%;
+  translate: 0 7.5dvh;
+  animation-delay: 1300ms;
+}
+
+.snow_8::before {
+  left: 55%;
+  translate: 0 8dvh;
+  animation-delay: 2150ms;
+}
+
+.snow_8::after {
+  left: 65%;
+  translate: 0 8.5dvh;
+  animation-delay: 2140ms;
+}
+
+.snow_9::before {
+  left: 75%;
+  translate: 0 5.5dvh;
+  animation-delay: 2600ms;
+}
+
+.snow_9::after {
+  left: 84%;
+  translate: 0 5.5dvh;
+  animation-delay: 2666ms;
+}
+
+.snow_10::before {
+  left: 89%;
+  translate: 0 5.5dvh;
+  animation-delay: 2200ms;
+}
+
+.snow_10::after {
+  left: 10%;
+  translate: 0 5.5dvh;
+  animation-delay: 2400ms;
+}
+
+.snow_11::before {
+  left: 20%;
+  translate: 0 5.5dvh;
+  animation-delay: 3200ms;
+}
+
+.snow_11::after {
+  left: 30%;
+  translate: 0 5.5dvh;
+  animation-delay: 3500ms;
+}
+
+.snow_12::before {
+  left: 40%;
+  translate: 0 2.5dvh;
+  animation-delay: 3999ms;
+}
+
+.snow_12::after {
+  left: 50%;
+  translate: 0 3dvh;
+  animation-delay: 3150ms;
+}
+
+.snow_13::before {
+  left: 60%;
+  translate: 0 3.5dvh;
+  animation-delay: 3400ms;
+}
+
+.snow_13::after {
+  left: 70%;
+  translate: 0 4dvh;
+  animation-delay: 4550ms;
+}
+
+.snow_14::before {
+  left: 79%;
+  translate: 0 4.5dvh;
+  animation-delay: 3655ms;
+}
+
+.snow_14::after {
+  left: 86%;
+  translate: 0 5dvh;
+  animation-delay: 3250ms;
+}
+
+.snow_15::before {
+  left: 55%;
+  translate: 0 5.5dvh;
+  animation-delay: 4600ms;
+}
+
+.snow_15::after {
+  left: 15%;
+  translate: 0 6dvh;
+  animation-delay: 6000ms;
+}
+
+.snow_16::before {
+  left: 25%;
+  translate: 0 6.5dvh;
+  animation-delay: 6400ms;
+}
+
+.snow_16::after {
+  left: 35%;
+  translate: 0 7dvh;
+  animation-delay: 6999ms;
+}
+
+.snow_17::before {
+  left: 45%;
+  translate: 0 7.5dvh;
+  animation-delay: 5300ms;
+}
+
+.snow_17::after {
+  left: 55%;
+  translate: 0 8dvh;
+  animation-delay: 6150ms;
+}
+
+.snow_18::before {
+  left: 65%;
+  translate: 0 8.5dvh;
+  animation-delay: 6140ms;
+}
+
+.snow_18::after {
+  left: 75%;
+  translate: 0 5.5dvh;
+  animation-delay: 6600ms;
+}
+
+.snow_19::before {
+  left: 83%;
+  translate: 0 5.5dvh;
+  animation-delay: 6666ms;
+}
+
+.snow_19::after {
+  left: 89%;
+  translate: 0 5.5dvh;
+  animation-delay: 6200ms;
+}
+
+@keyframes snow {
+  0% {
+    translate: 0 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    translate: 0 105dvh;
+    scale: 1.2;
+  }
+}
