@@ -4,7 +4,7 @@ An interactive festive postcard with support for 12 languages and automatic user
 
 ## ✨ Features
 
-- 🌐 **12 Languages**: Russian, Belarusian, English, German, Ukrainian, Lithuanian, Latvian, Georgian, Kazakh, Spanish
+- 🌐 **12 Languages**: Russian, Belarusian, English, German, Ukrainian, Lithuanian, Latvian, Georgian, Kazakh, Spanish, Polish, Bulgarian
 - 🎯 **Auto-language detection**: By IP address, browser settings, or URL parameters
 - ❄️ **Animated snowfall**: 38 snowflakes with unique trajectories
 - 📱 **Responsive design**: Properly displays on all devices
@@ -82,7 +82,7 @@ Click the language code button in the top right corner.
 
 ## 🔧 Customization
 
-### Adding a New Language
+### Adding a New Language(Example)
 
 1. Add translation to `wishes.js`:
 
