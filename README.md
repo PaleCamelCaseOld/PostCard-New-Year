@@ -93,7 +93,7 @@ const translations = {
     friends: "Amigos,",
     newYear: "¡Feliz Año Nuevo!",
     wish: "Les deseo buena suerte y éxito. ¡Que el nuevo año sea exactamente como lo imaginan!",
-    author: "© alexvit93, Diciembre 2025",
+    author: "© You're nickname, Diciembre 2025",
   },
 };
 ```
