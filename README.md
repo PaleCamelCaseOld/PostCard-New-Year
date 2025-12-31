@@ -1,10 +1,10 @@
 # 🎅 Multilingual New Year's Postcard
 
-An interactive festive postcard with support for 10 languages and automatic user language detection.
+An interactive festive postcard with support for 12 languages and automatic user language detection.
 
 ## ✨ Features
 
-- 🌐 **10 Languages**: Russian, Belarusian, English, German, Ukrainian, Lithuanian, Latvian, Georgian, Kazakh, Spanish
+- 🌐 **12 Languages**: Russian, Belarusian, English, German, Ukrainian, Lithuanian, Latvian, Georgian, Kazakh, Spanish
 - 🎯 **Auto-language detection**: By IP address, browser settings, or URL parameters
 - ❄️ **Animated snowfall**: 38 snowflakes with unique trajectories
 - 📱 **Responsive design**: Properly displays on all devices
@@ -39,18 +39,20 @@ new-year-card/
 
 ## 🌍 Supported Languages
 
-| Language   | Code | Greeting                        |
-| ---------- | ---- | ------------------------------- |
-| Russian    | `ru` | Друзья, с Новым годом!          |
-| Belarusian | `by` | Сябры, Вiншую з Новым годам!    |
-| English    | `en` | Friends, Happy New Year!        |
-| German     | `de` | Freunde, Frohes neues Jahr!     |
-| Spanish    | `es` | Amigos,¡Feliz Año Nuevo!        |
-| Ukrainian  | `ua` | Друзі, з Новим роком!           |
-| Lithuanian | `lt` | Draugai, Su Naujaisiais metais! |
-| Latvian    | `lv` | Draugi, Laimīgu Jauno gadu!     |
-| Georgian   | `ka` | მეგობრებო, გილოცავთ ახალ წელს!  |
-| Kazakh     | `kz` | Достар, Жаңа жылмен!            |
+| Language   | Code | Greeting                               |
+| ---------- | ---- | -------------------------------------- |
+| Russian    | `ru` | Друзья, с Новым годом!                 |
+| Belarusian | `by` | Сябры, Вiншую з Новым годам!           |
+| English    | `en` | Friends, Happy New Year!               |
+| German     | `de` | Freunde, Frohes neues Jahr!            |
+| Spanish    | `es` | Amigos,¡Feliz Año Nuevo!               |
+| Ukrainian  | `ua` | Друзі, з Новим роком!                  |
+| Bulgarian  | `bg` | Приятели, Честита Нова година!         |
+| Polish     | `pl` | Przyjaciele, Szczęśliwego Nowego Roku! |
+| Lithuanian | `lt` | Draugai, Su Naujaisiais metais!        |
+| Latvian    | `lv` | Draugi, Laimīgu Jauno gadu!            |
+| Georgian   | `ka` | მეგობრებო, გილოცავთ ახალ წელს!         |
+| Kazakh     | `kz` | Достар, Жаңа жылмен!                   |
 
 ## ⚙️ Usage
 

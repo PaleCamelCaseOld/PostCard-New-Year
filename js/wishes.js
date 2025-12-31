@@ -17,6 +17,18 @@ const translations = {
     wish: "Wishing you good luck and success. May the new year be exactly how you imagine it!",
     author: "© alexvit93, December 2025",
   },
+  pl: {
+    friends: "Przyjaciele,",
+    newYear: "Szczęśliwego Nowego Roku!",
+    wish: "Życzę Wam powodzenia i sukcesów. Niech Nowy Rok będzie dokładnie taki, jaki sobie wyobrażacie!",
+    author: "© alexvit93, Grudzień 2025",
+  },
+  bg: {
+    friends: "Приятели,",
+    newYear: "Честита Нова година!",
+    wish: "Пожелавам ви късмет и успехи. Нека Новата година бъде точно такава, каквато си я представяте!",
+    author: "© alexvit93, Декември 2025",
+  },
   es: {
     friends: "Amigos,",
     newYear: "¡Feliz Año Nuevo!",
@@ -76,6 +88,8 @@ class LanguageResolver {
       GE: "ka",
       KZ: "kz",
       ES: "es",
+      PL: "pl",
+      BG: "bg",
     };
   }
 
